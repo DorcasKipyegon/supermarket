@@ -63,6 +63,20 @@ return [
                 Mysql::ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+        
+        'mysql_readonly' => [
+    'driver'      => 'mysql',
+    'host'        => env('DB_READONLY_HOST', env('DB_HOST')),
+    'port'        => env('DB_READONLY_PORT', '3306'),
+    'database'    => env('DB_DATABASE'),
+    'username'    => env('DB_READONLY_USERNAME'),
+    'password'    => env('DB_READONLY_PASSWORD'),
+    'charset'     => 'utf8mb4',
+    'collation'   => 'utf8mb4_unicode_ci',
+    'prefix'      => '',
+    'strict'      => true,
+    'engine'      => null,
+],
 
         'mariadb' => [
             'driver' => 'mariadb',
